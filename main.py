@@ -20,9 +20,15 @@ def main():
         elif command == 'R':
             crud.read_clients()
         elif command == 'U':
-            print("this function updates an element")
+            crud.update_client()
         elif command == 'D':
-            print("this function updates an element")
+            crud.delete_client()
+        elif command == 'S':
+            name = input('What is the client name? ')
+            if crud.search_client(name):
+                print("The client is in the client's list")
+            else:
+                print(f"The client: {name} is not in our client's list")
         else:
             if command != 'E':
                 print('command invalid')

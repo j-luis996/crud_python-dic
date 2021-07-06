@@ -1,7 +1,7 @@
 import const
 
 class crud:
-    def __get_client_field(self, field_name, message = "What's the client {}: "):
+    def __get_client_field(self, field_name, message = "What's the client {}? "):
         field = None
 
         while not field:
@@ -26,6 +26,7 @@ class crud:
         else:
             const.clients.append(client)
 
+
     def create_client(self):
         client = self.__get_client_from_user()
         self.__add_client(client)
@@ -38,4 +39,22 @@ class crud:
 
         for idx, client in enumerate(const.clients):
             print(f'{idx}  | {client["name"]}  | {client["company"]}  | {client["email"]}  | {client["position"]}')
-        
+
+
+    def update_client(self):
+        pass
+
+
+    def delete_client(self):
+        pass
+
+
+    def search_client(self, data, key = "name"):
+        client_exist = False
+        for client in const.clients:
+            if client[key] ==data:
+                client_exist = True
+                break
+            else:
+                continue
+        return client_exist

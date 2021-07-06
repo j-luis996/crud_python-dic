@@ -7,13 +7,14 @@ please choose any option
 [R] read
 [U] update
 [D] delete
+[S] search for name
 
 [E] exit
 """
 
 clients = [
     {
-        'name': 'Jorge',
+        'name': 'jorge',
         'company': 'Upiita',
         'email': 'algo@algo.com',
         'position': "student"
