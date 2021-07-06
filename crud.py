@@ -1,3 +1,4 @@
+from ej import search_client
 import const
 
 class crud:
@@ -42,11 +43,25 @@ class crud:
 
 
     def update_client(self):
-        pass
+        id_client = int(self.__get_client_field(field_name="id"))
+        if id_client < len(const.clients):
+            client_update = self.__get_client_from_user()
+            const.clients[id_client] = client_update
+            print("Client updated in client's list")
+        else:
+            print('id invalid')
 
 
     def delete_client(self):
-        pass
+        id_client = int(self.__get_client_field(field_name="id"))
+        if id_client < len(const.clients):
+            for idx, client in enumerate(const.clients):
+                if idx == id_client:
+                    del const.clients[idx] 
+                    break
+            print("Client deleted in client's list")
+        else:
+            print('id invalid')
 
 
     def search_client(self, data, key = "name"):
