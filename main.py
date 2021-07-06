@@ -1,6 +1,9 @@
 import os
 import const
+import crud
 
+
+crud = crud.crud()
 def main():
     command = None
 
@@ -13,9 +16,9 @@ def main():
         command = command.upper()
 
         if command == 'C':
-            print("this function will create a new element")
+            crud.create_client()
         elif command == 'R':
-            print("this function will read the all list")
+            crud.read_clients()
         elif command == 'U':
             print("this function updates an element")
         elif command == 'D':
